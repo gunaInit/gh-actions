@@ -8,5 +8,6 @@ jobs:
     second-job:
         runs-on: ubuntu-latest
         steps:
-            - run: maven --version
-        
+            - uses: Build with Maven
+            - run: mvn clean install
+            - run: mvn test
