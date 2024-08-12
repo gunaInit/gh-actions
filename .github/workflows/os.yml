@@ -5,3 +5,8 @@ jobs:
         steps:
             - run: node --version
             - run: npm --version
+    second-job:
+        runs-on: ubuntu-latest
+        steps:
+            - run: maven --version
+        
