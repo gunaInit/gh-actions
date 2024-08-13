@@ -1,31 +1,24 @@
-name: Build and Test Maven Project
-
-on:
-    push:
-        branches:
-            - main
+name: hello world actions
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-
-        steps:
-        - name: Checkout code
-        - uses: actions/checkout@v3
-
-        - name: Set up Java JDK
-        uses: actions/setup-java@v3
-        with:
-            java-version: '11'  # Specify the Java version required by your project
-
-        - name: Set up Maven
-        uses: actions/setup-java@v3
-        with:
-                java-version: '11'
-                maven-version: '3.8.6'  # Specify the Maven version required by your project
-
-        - name: Build with Maven
-        run: mvn clean install  # Run your Maven commands here
-
-        - name: Run Tests
-        run: mvn test
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: hello world
+        run: echo "Hello world"
+        shell: bash
+  goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: goodbye world
+        run: echo "Goodbye world"
+        shell: bash
