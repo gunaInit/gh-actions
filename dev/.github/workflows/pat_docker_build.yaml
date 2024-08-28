@@ -13,4 +13,4 @@ jobs:
             -   name: set up Docker Buuildx
                 uses: docker/setup-buildx-action@v2
             -   name: Build Docker Image
-                run: docker build -t my-app-image:latest   
+                run: docker build -t my-app-image:latest .
